@@ -62,7 +62,7 @@ export default {
       slides: [
         {
           title: 'Memory Test Game',
-          image: '/src/assets/img/memorygame.jpg',
+          image: '/img/memorygame.jpg',
           description:
             'A simple browser game where players flip cards to match pairs. Built with HTML, CSS, and JavaScript.',
           tech: ['HTML', 'CSS', 'JavaScript'],
@@ -70,7 +70,7 @@ export default {
         },
         {
           title: 'Photo Booth',
-          image: '/src/assets/img/photobooth.jpg',
+          image: '/img/photobooth.jpg',
           description:
             'A photobooth is a fun, self-service setup that lets users take instant photos—often with props or filters—for events or personal keepsakes.',
           tech: ['HTML', 'CSS', 'JavaScript'],
@@ -78,7 +78,7 @@ export default {
         },
         {
           title: 'WeatherTeller',
-          image: '/src/assets/img/weather.jpg',
+          image: '/img/weather.jpg',
           description:
             'A weather web app simply shows the current weather and forecast for a chosen location.',
           tech: ['HTML', 'CSS', 'JavaScript'],
