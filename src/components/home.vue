@@ -54,7 +54,7 @@
       <img
         src="@/assets/img/profile2.jpg"
         alt="Profile"
-        class="border rounded-lg w-96 h-96 cover lg:w-96 lg:h-86"
+        class="border rounded-lg w-96 h-[600px] cover sm:w-[500px] sm:h-[650px] shadow-lg"
       />
     </div>
   </body>
