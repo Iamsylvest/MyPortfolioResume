@@ -39,13 +39,13 @@
       <!-- Navigation Buttons -->
       <button
         @click="prevSlide"
-        class="absolute left-0 px-4 py-2 text-3xl -translate-y-1/2 top-1/2"
+        class="absolute left-0 px-2 py-2 text-3xl -translate-y-1/2 rounded-full top-1/2 hover:bg-blue-200"
       >
         ❮
       </button>
       <button
         @click="nextSlide"
-        class="absolute right-0 px-4 py-2 text-3xl -translate-y-1/2 top-1/2"
+        class="absolute right-0 px-2 py-2 text-3xl -translate-y-1/2 rounded-full top-1/2 hover:bg-blue-200"
       >
         ❯
       </button>
@@ -81,7 +81,7 @@ export default {
           image: '/img/weather.jpg',
           description:
             'A weather web app simply shows the current weather and forecast for a chosen location.',
-          tech: ['HTML', 'CSS', 'JavaScript'],
+          tech: ['HTML', 'CSS', 'JavaScript', 'openweathermap'],
           link: 'https://example.com/weather-teller',
         },
       ],

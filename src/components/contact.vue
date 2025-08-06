@@ -13,18 +13,38 @@
             Have a question, proposal, or just want to say hello?
           </p>
           <p class="text-lg text-gray-700">
-            We'd love to hear from you. Fill out the form and we'll get back to you as soon as
-            possible.
+            I'd love to hear from you. Just message me and I’ll get back to you as soon as possible.
           </p>
         </div>
 
         <!-- RIGHT SIDE: CONTACT FORM -->
         <div class="p-4 sm:p-8">
-          <form action="" class="flex flex-col w-full max-w-md gap-4 mx-auto">
+          <form
+            action="https://formsubmit.co/madelosylvest@gmail.com"
+            method="POST"
+            class="flex flex-col w-full max-w-md gap-4 mx-auto"
+          >
+            <!-- Hidden settings -->
+            <input type="hidden" name="_captcha" value="false" />
+            <!-- disable FormSubmit CAPTCHA -->
+            <input
+              type="hidden"
+              name="_next"
+              value="https://my-portfolio-resume-g5k7ksa74-sylvests-projects.vercel.app/"
+            />
+            <!-- redirect after submission -->
+            <label for="name" class="font-semibold"> Name:</label>
+            <input
+              type="text"
+              class="p-2 border-2 rounded-md"
+              placeholder="Your name..."
+              name="name"
+            />
+
             <label for="email" class="font-semibold">Email:</label>
             <input
               id="email"
-              type="email"
+              name="email"
               placeholder="you@example.com"
               class="p-2 border-2 rounded-md"
               required
@@ -32,6 +52,7 @@
 
             <label for="message" class="font-semibold">Message:</label>
             <textarea
+              name="message"
               id="message"
               rows="5"
               placeholder="Your message here..."

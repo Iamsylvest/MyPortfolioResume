@@ -4,12 +4,19 @@
   >
     <!-- Top-left logo or name -->
     <div
-      class="fixed left-[-330px] z-50 text-lg font-bold top-3 bg-blue-500 text-white rounded-full p-1 border-white- border-2 shadow-md"
+      class="fixed left-[-330px] z-50 text-lg font-semibold top-3 bg-blue-500 text-white rounded-full p-1 border-white border-2 shadow-md"
     >
-      <a href="#home">Syl.</a>
+      <a href="#home" @click="handleClick('home')">Syl.</a>
     </div>
-    <nav class="flex items-center justify-center p-3 space-x-12">
-      <a href="#home" class="relative inline-block group">
+    <div
+      class="absolute p-2 transition-all duration-700 bg-blue-500 border-2 border-r-2 border-white rounded-lg shadow-md cursor-pointer translate-x-96 hover:scale-105"
+    >
+      <a
+        href="#contact"
+        class="flex gap-2 font-semibold text-white"
+        @click="handleClick('contact')"
+      >
+        Get in touch
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -21,17 +28,52 @@
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
           />
         </svg>
-        <!-- Modal-like box on hover -->
+      </a>
+    </div>
+    <nav class="flex items-center justify-center p-3 space-x-12">
+      <a
+        href="#home"
+        @click="handleClick('home')"
+        :class="[
+          'relative inline-block group',
+          navStore.activeNav === 'home' ? 'border-b-2 border-blue-500' : '',
+        ]"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 
+        .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 
+        1.125-1.125h2.25c.621 0 1.125.504 
+        1.125 1.125V21h4.125c.621 0 1.125-.504 
+        1.125-1.125V9.75M8.25 21h8.25"
+          />
+        </svg>
+
         <div
           class="absolute z-10 px-4 py-2 mt-2 text-black transition-all duration-300 ease-in-out -translate-x-1/2 translate-y-1 bg-white border border-gray-300 shadow-lg opacity-0 rounded-xl left-1/2 top-full group-hover:opacity-100 group-hover:translate-y-0"
         >
           Home
         </div>
       </a>
-      <a href="#about" class="relative inline-block group"
+      <a
+        href="#about"
+        @click="handleClick('about')"
+        :class="[
+          'relative inline-block group',
+          navStore.activeNav === 'about' ? 'border-b-2 border-blue-500' : '',
+        ]"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -52,7 +94,13 @@
           About
         </div>
       </a>
-      <a href="#project" class="relative inline-block group"
+      <a
+        href="#project"
+        @click="handleClick('project')"
+        :class="[
+          'relative inline-block group',
+          navStore.activeNav === 'project' ? 'border-b-2 border-blue-500' : '',
+        ]"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -73,7 +121,13 @@
           Project
         </div>
       </a>
-      <a href="#contact" class="relative inline-block group"
+      <a
+        href="#contact"
+        @click="handleClick('contact')"
+        :class="[
+          'group inline-block relative',
+          navStore.activeNav === 'contact' ? 'border-b-2 border-blue-500' : '',
+        ]"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -97,4 +151,13 @@
     </nav>
   </div>
 </template>
-<script></script>
+<script setup>
+import { useNavStore } from '@/stores/navStore'
+import { ref, onMounted } from 'vue'
+
+const navStore = useNavStore()
+
+function handleClick(nav) {
+  navStore.setActiveNav(nav)
+}
+</script>

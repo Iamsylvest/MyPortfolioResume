@@ -7,40 +7,48 @@ import Contact from './components/contact.vue'
 import Footer from './components/footer.vue'
 import { ref, onMounted } from 'vue'
 
-// Refs to hold DOM elements for each section
+// These are "references" to your HTML sections like Home, About, etc.
+// You use these to interact with those parts of the page in JavaScript.
 const homeRef = ref(null)
 const aboutRef = ref(null)
 const projectRef = ref(null)
+const contactRef = ref(null)
 
-// Refs to control visibility for transition effects
+// These are booleans to keep track of whether each section is currently visible on screen
 const homeVisible = ref(false)
 const aboutVisible = ref(false)
 const projectVisible = ref(false)
+const contactVisible = ref(false)
 
 onMounted(() => {
-  // Create an IntersectionObserver to track when sections enter the viewport
+  // This sets up an "Intersection Observer"
+  // It watches if elements (like your sections) appear on screen when scrolling
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        // Check which section is currently intersecting and update visibility
+        // When a section enters the screen, update its visibility to true
+        // When it leaves the screen, update it to false
         if (entry.target === homeRef.value) {
           homeVisible.value = entry.isIntersecting
         } else if (entry.target === aboutRef.value) {
           aboutVisible.value = entry.isIntersecting
         } else if (entry.target === projectRef.value) {
-          projectVisible.value = entry.isIntersecting // ✅ Fixed assignment
+          projectVisible.value = entry.isIntersecting
+        } else if (entry.target === contactRef.value) {
+          contactVisible.value = entry.isIntersecting
         }
       })
     },
     {
-      threshold: 0.2, // Trigger when 20% of the section is visible
+      threshold: 0.2, // Only trigger when 20% of the section is visible
     },
   )
 
-  // Start observing each section if it's available
+  // This tells the observer which elements (sections) to watch
   if (homeRef.value) observer.observe(homeRef.value)
   if (aboutRef.value) observer.observe(aboutRef.value)
-  if (projectRef.value) observer.observe(projectRef.value) // ✅ Fixed: observe projectRef
+  if (projectRef.value) observer.observe(projectRef.value)
+  if (contactRef.value) observer.observe(contactRef.value)
 })
 </script>
 <template>
@@ -76,7 +84,14 @@ onMounted(() => {
     <Project />
   </div>
 
-  <div>
+  <div
+    ref="contactRef"
+    :class="{
+      'opacity-100 translate-y-0': contactVisible,
+      'opacity-0 translate-y-10': !contactVisible,
+    }"
+    class="transition-all duration-700 ease-in-out"
+  >
     <Contact />
   </div>
   <div>
