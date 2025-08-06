@@ -103,6 +103,12 @@
           <img src="/src/assets/img/mysql.png" alt="javascript" class="w-20 h-12 mx-auto" />
           <p class="mt-2 font-semibold">Mysql</p>
         </div>
+        <div
+          class="p-4 text-center transition-all duration-300 border rounded-lg shadow-md bg-white/30 backdrop-blur-md border-white/20 hover:scale-105"
+        >
+          <img src="/src/assets/img/vscode.png" alt="javascript" class="w-20 h-12 mx-auto" />
+          <p class="mt-2 font-semibold">Vscode</p>
+        </div>
       </div>
     </div>
   </div>
