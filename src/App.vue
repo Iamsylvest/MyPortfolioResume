@@ -6,45 +6,47 @@ import Project from './components/project.vue'
 import Contact from './components/contact.vue'
 import Footer from './components/footer.vue'
 import { ref, onMounted } from 'vue'
+import { useNavStore } from './stores/navStore'
 
-// These are "references" to your HTML sections like Home, About, etc.
-// You use these to interact with those parts of the page in JavaScript.
+const navStore = useNavStore()
+
+// Section Refs
 const homeRef = ref(null)
 const aboutRef = ref(null)
 const projectRef = ref(null)
 const contactRef = ref(null)
 
-// These are booleans to keep track of whether each section is currently visible on screen
+// Visibility for animations
 const homeVisible = ref(false)
 const aboutVisible = ref(false)
 const projectVisible = ref(false)
 const contactVisible = ref(false)
 
 onMounted(() => {
-  // This sets up an "Intersection Observer"
-  // It watches if elements (like your sections) appear on screen when scrolling
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        // When a section enters the screen, update its visibility to true
-        // When it leaves the screen, update it to false
         if (entry.target === homeRef.value) {
           homeVisible.value = entry.isIntersecting
+          if (entry.isIntersecting) navStore.setActiveNav('home')
         } else if (entry.target === aboutRef.value) {
           aboutVisible.value = entry.isIntersecting
+          if (entry.isIntersecting) navStore.setActiveNav('about')
         } else if (entry.target === projectRef.value) {
           projectVisible.value = entry.isIntersecting
+          if (entry.isIntersecting) navStore.setActiveNav('project')
         } else if (entry.target === contactRef.value) {
           contactVisible.value = entry.isIntersecting
+          if (entry.isIntersecting) navStore.setActiveNav('contact')
         }
       })
     },
     {
-      threshold: 0.2, // Only trigger when 20% of the section is visible
+      threshold: 0.4, // Show when 40% of the section is visible
     },
   )
 
-  // This tells the observer which elements (sections) to watch
+  // Start observing sections
   if (homeRef.value) observer.observe(homeRef.value)
   if (aboutRef.value) observer.observe(aboutRef.value)
   if (projectRef.value) observer.observe(projectRef.value)
