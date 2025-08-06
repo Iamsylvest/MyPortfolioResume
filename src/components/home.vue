@@ -52,9 +52,9 @@
       class="relative flex items-center justify-center sm:justify-start sm:translate-x-32 top-12 sm:top-0"
     >
       <img
-        src="@/assets/img/profile2.jpg"
+        src="@/assets/img/profile.png"
         alt="Profile"
-        class="border rounded-lg w-96 h-[600px] cover sm:w-[500px] sm:h-[650px] shadow-lg"
+        class="w-96 h-[350px] object-cover lg:w-[500px] lg:h-[600px] rounded-full"
       />
     </div>
   </body>
