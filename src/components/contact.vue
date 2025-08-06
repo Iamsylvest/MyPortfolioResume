@@ -30,7 +30,7 @@
             <input
               type="hidden"
               name="_next"
-              value="https://my-portfolio-resume-g5k7ksa74-sylvests-projects.vercel.app/?submitted=true"
+              value="https://my-portfolio-resume-g5k7ksa74-sylvests-projects.vercel.app/"
             />
             <!-- redirect after submission -->
             <label for="name" class="font-semibold"> Name:</label>
@@ -72,22 +72,4 @@
     </div>
   </div>
 </template>
-<script setup>
-import Swal from 'sweetalert2'
-import { onMounted } from 'vue'
-
-onMounted(() => {
-  const params = new URLSearchParams(window.location.search)
-  if (params.get('submitted')) {
-    Swal.fire({
-      icon: 'success',
-      title: 'Success!',
-      text: 'Your message was sent successfully!',
-    })
-
-    // Clean the URL so it doesn't trigger again on reload
-    const newUrl = window.location.origin + window.location.pathname
-    window.history.replaceState({}, '', newUrl)
-  }
-})
-</script>
+<script setup></script>
