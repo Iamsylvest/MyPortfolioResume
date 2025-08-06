@@ -42,7 +42,7 @@ onMounted(() => {
       })
     },
     {
-      threshold: 0.4, // Show when 40% of the section is visible
+      threshold: 0.2, // Show when 40% of the section is visible
     },
   )
 
