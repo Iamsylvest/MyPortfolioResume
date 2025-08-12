@@ -23,34 +23,52 @@ const projectVisible = ref(false)
 const contactVisible = ref(false)
 
 onMounted(() => {
+  // Create a new IntersectionObserver to detect when sections enter/leave the viewport
   const observer = new IntersectionObserver(
     (entries) => {
+      // Loop through each observed element's intersection change
       entries.forEach((entry) => {
+        // If the element is the home section
         if (entry.target === homeRef.value) {
+          // Update visibility state for home section
           homeVisible.value = entry.isIntersecting
+          // If it's currently visible, set the active navigation link to "home"
           if (entry.isIntersecting) navStore.setActiveNav('home')
+
+          // If the element is the about section
         } else if (entry.target === aboutRef.value) {
+          // Update visibility state for about section
           aboutVisible.value = entry.isIntersecting
+          // If it's currently visible, set the active navigation link to "about"
           if (entry.isIntersecting) navStore.setActiveNav('about')
+
+          // If the element is the projects section
         } else if (entry.target === projectRef.value) {
+          // Update visibility state for projects section
           projectVisible.value = entry.isIntersecting
+          // If it's currently visible, set the active navigation link to "project"
           if (entry.isIntersecting) navStore.setActiveNav('project')
+
+          // If the element is the contact section
         } else if (entry.target === contactRef.value) {
+          // Update visibility state for contact section
           contactVisible.value = entry.isIntersecting
+          // If it's currently visible, set the active navigation link to "contact"
           if (entry.isIntersecting) navStore.setActiveNav('contact')
         }
       })
     },
     {
-      threshold: 0.2, // Show when 40% of the section is visible
+      // Observer options:
+      threshold: 0.2, // Trigger callback when at least 20% of the section is visible in the viewport
     },
   )
 
-  // Start observing sections
-  if (homeRef.value) observer.observe(homeRef.value)
-  if (aboutRef.value) observer.observe(aboutRef.value)
-  if (projectRef.value) observer.observe(projectRef.value)
-  if (contactRef.value) observer.observe(contactRef.value)
+  // Start observing each section only if the ref exists
+  if (homeRef.value) observer.observe(homeRef.value) // Watch home section
+  if (aboutRef.value) observer.observe(aboutRef.value) // Watch about section
+  if (projectRef.value) observer.observe(projectRef.value) // Watch project section
+  if (contactRef.value) observer.observe(contactRef.value) // Watch contact section
 })
 </script>
 <template>

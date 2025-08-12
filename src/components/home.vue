@@ -26,15 +26,8 @@
 
       <div class="flex justify-center duration-300 sm:justify-start">
         <a
-          href="#"
+          href="/Sylvest_Madelo_CV.pdf"
           target="_blank"
-          @click.prevent="
-            // Check if the button is disabled (buttonViewCv is true)
-            buttonViewCv
-              ? null // Do nothing if disabled
-              : window.open('/Sylvest_Madelo_CV.pdf', '_blank')
-            // If not disabled, open the CV in a new tab
-          "
           class="flex gap-2 p-3 px-12 font-semibold text-white bg-blue-500 border-2 rounded-lg hover:border-blue-300 hover:underline text-nowrap"
         >
           View my CV
@@ -68,7 +61,4 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-
-// Temporarily disable
-const buttonViewCv = ref(true)
 </script>

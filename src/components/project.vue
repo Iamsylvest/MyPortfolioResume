@@ -27,9 +27,17 @@
             </ul>
             <a :href="slide.link" target="_blank" rel="noopener noreferrer" class="w-full">
               <button
+                v-if="slide.title !== 'Expenses Tracker'"
                 class="w-full py-2 font-semibold text-white transition bg-blue-500 rounded-b-xl hover:bg-blue-600"
               >
                 Live Demo
+              </button>
+
+              <button
+                v-else
+                class="w-full py-2 font-semibold text-white transition bg-blue-500 rounded-b-xl hover:bg-blue-600"
+              >
+                Watch Demo
               </button>
             </a>
           </div>
@@ -65,7 +73,7 @@ export default {
           image: '/img/memorygame.jpg',
           description:
             'A simple browser game where players flip cards to match pairs. Built with HTML, CSS, and JavaScript.',
-          tech: ['HTML', 'CSS', 'JavaScript'],
+          tech: ['HTML', 'CSS', 'JavaScript', 'Vue', 'Tailwind'],
           link: 'https://personal-projects-4h5g.vercel.app/',
         },
         {
@@ -73,7 +81,7 @@ export default {
           image: '/img/photobooth.jpg',
           description:
             'A photobooth is a fun, self-service setup that lets users take instant photos—often with props or filters—for events or personal keepsakes.',
-          tech: ['HTML', 'CSS', 'JavaScript'],
+          tech: ['HTML', 'CSS', 'JavaScript', 'Vue', 'Tailwind'],
           link: 'https://photobooth-ecru.vercel.app/',
         },
         {
@@ -81,8 +89,24 @@ export default {
           image: '/img/weather.jpg',
           description:
             'A weather web app simply shows the current weather and forecast for a chosen location.',
-          tech: ['HTML', 'CSS', 'JavaScript', 'openweathermap'],
+          tech: ['HTML', 'CSS', 'JavaScript', , 'Vue', 'Tailwind', 'openweathermap'],
           link: 'https://example.com/weather-teller',
+        },
+        {
+          title: 'Expenses Tracker',
+          image: '/img/expensesTrackerImg.jpg',
+          description:
+            'Simple Expenses Tracker is an intuitive web app that helps you record income and expenses quickly. View real-time totals and filter by category or date. Perfect for personal budgeting or small side projects.',
+          tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Vue', 'Laravel', 'Tailwind'],
+          link: 'https://youtu.be/R_zwzrrSJVA',
+        },
+        {
+          title: 'Inventory and Tracking System',
+          image: '/img/inventoryAndTracking.jpg',
+          description:
+            'Inventory and Tracking System – A tool to manage stock levels, track material movement, and monitor inventory changes in real time for efficient operations.',
+          tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Vue', 'Laravel', 'Tailwind'],
+          link: 'https://youtu.be/zecc8UF40IU',
         },
       ],
     }
