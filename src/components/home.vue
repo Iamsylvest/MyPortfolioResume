@@ -49,12 +49,12 @@
       </div>
     </div>
     <div
-      class="relative flex items-center justify-center sm:justify-start sm:translate-x-32 top-12 sm:top-0"
+      class="relative flex items-center justify-center top-12 sm:justify-start sm:translate-x-32 sm:top-0"
     >
       <img
         src="@/assets/img/profile.png"
         alt="Profile"
-        class="w-[200px] h-[250px] cover lg:w-[500px] lg:h-[600px] rounded-full"
+        class="w-full aspect-square object-cover rounded-full sm:max-w-[400px] lg:max-w-[500px]"
       />
     </div>
   </body>

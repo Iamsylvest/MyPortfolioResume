@@ -27,7 +27,10 @@
             </ul>
             <a :href="slide.link" target="_blank" rel="noopener noreferrer" class="w-full">
               <button
-                v-if="slide.title !== 'Expenses Tracker'"
+                v-if="
+                  slide.title !== 'Expenses Tracker' &&
+                  slide.title !== 'Inventory and Tracking System'
+                "
                 class="w-full py-2 font-semibold text-white transition bg-blue-500 rounded-b-xl hover:bg-blue-600"
               >
                 Live Demo
@@ -89,8 +92,8 @@ export default {
           image: '/img/weather.jpg',
           description:
             'A weather web app simply shows the current weather and forecast for a chosen location.',
-          tech: ['HTML', 'CSS', 'JavaScript', , 'Vue', 'Tailwind', 'openweathermap'],
-          link: 'https://example.com/weather-teller',
+          tech: ['HTML', 'CSS', 'JavaScript', 'Vue', 'Tailwind', 'openweathermap'],
+          link: 'https://weather-teller-nine.vercel.app/',
         },
         {
           title: 'Expenses Tracker',
