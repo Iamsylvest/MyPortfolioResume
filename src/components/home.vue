@@ -1,7 +1,7 @@
 <template>
   <body id="home" class="grid items-center justify-center grid-cols-1 p-12 mt-32 sm:grid-cols-2">
     <div class="relative space-y-5 sm:left-32">
-      <h1 class="text-4xl font-bold text-center sm:text-left">Hi! I am Sylvest Madelo</h1>
+      <h1 class="text-4xl font-bold text-center sm:text-left">Hi, I'm Sylvest Madelo</h1>
       <p class="text-center sm:text-left">
         Aspiring Full-Stack Web Developer and recent graduate, eager to apply my skills, keep
         learning, and build impactful projects.

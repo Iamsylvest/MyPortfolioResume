@@ -2,37 +2,6 @@
   <div
     class="fixed top-0 z-50 flex items-center justify-center p-2 mx-auto mt-3 -translate-x-1/2 border shadow-lg rounded-xl w-96 bg-white/30 backdrop-blur-md border-white/20 left-1/2"
   >
-    <!-- Top-left logo or name -->
-    <div
-      class="fixed left-[-330px] z-50 text-lg font-semibold top-3 bg-blue-500 text-white rounded-full p-1 border-white border-2 shadow-md"
-    >
-      <a href="#home" @click="handleClick('home')">Syl.</a>
-    </div>
-    <div
-      class="absolute p-2 transition-all duration-700 bg-blue-500 border-2 border-r-2 border-white rounded-lg shadow-md cursor-pointer translate-x-96 hover:scale-105"
-    >
-      <a
-        href="#contact"
-        class="flex gap-2 font-semibold text-white"
-        @click="handleClick('contact')"
-      >
-        Get in touch
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-          />
-        </svg>
-      </a>
-    </div>
     <nav class="flex items-center justify-center p-3 space-x-12">
       <a
         href="#home"
